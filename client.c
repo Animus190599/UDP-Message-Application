@@ -1,8 +1,9 @@
 #include "helper.h"
     
-#define PORT     8080 
-#define MAXLINE 1024 
-    
+
+
+
+
 // Driver code 
 int main() { 
     int sockfd; 
@@ -38,4 +39,8 @@ int main() {
     
     close(sockfd); 
     return 0; 
+}
+
+bool MessageCheck(){
+    
 }
