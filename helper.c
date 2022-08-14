@@ -5,11 +5,11 @@ void struct2str(Data *dg, char * buffer){
     // Get length of string to hold struct values
     // size_t len = snprintf(NULL)
     // memcpy
+    printf("Hello");
     int j = snprintf(buffer, sizeof(buffer), "%lld,%c,%hu,%hd,%hd,%hu,%3s",dg->check,
              dg->version, dg->udp_length, dg->payload.lattitude, dg->payload.longtitude,
              dg->payload.eta, dg->payload.dest);
     printf("%s",*buffer);
-    fflush(stdout);
     // char *buffer = malloc(sizeof(char)*100);
     // int offset = 0;
 

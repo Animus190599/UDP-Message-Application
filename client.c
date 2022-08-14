@@ -29,22 +29,22 @@ int main() {
     //     free(message);
     //     return -1;
     // }
-    char message[MAXLINE];
+    char message[50];
 
     // zero out structure
     // memset(datagram, 0, sizeof(*datagram));
 
-    printf("%zu",sizeof(datagram->version));
-    printf("%zu",sizeof(datagram->payload));
-    printf("%zu",sizeof(datagram->udp_length));
+    // printf("%zu",sizeof(datagram->version));
+    // printf("%zu",sizeof(datagram->payload));
+    // printf("%zu",sizeof(datagram->udp_length));
 
     InitializeFields(datagram);
     printf("hello\n");
     // printf("%d\n",datagram->version);
     // printf("%d\n",datagram->payload.lattitude);
     
-    structTest();
-    
+    struct2str(datagram, message);
+    // printf("%s",message);
     free(datagram);
     // free(message);
 
