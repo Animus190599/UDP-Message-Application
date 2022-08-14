@@ -8,3 +8,6 @@ What you write to the UDP packet buffer is the content of the structure starting
 The receiving end should copy the received data into a buffer of the same size, then cast it to the exact same struct, defined the exact same way.
 
 Assume that the test was 2 hrs, so you only gave me 1 payload version. And that's all I have to worry about
+
+
+struct2str: unsuccessful use of memcpy, return to snprintf

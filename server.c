@@ -1,28 +1,6 @@
 // Server side implementation of UDP client-server model 
-#include "helper.h"
+#include "server.h"
     
-
-// Payload header structure    
-struct Package
-{
-    uint64_t check;
-    uint8_t version;
-    uint16_t udp_length;
-    // long checksum
-    // char version
-    // unsigned short length
-    // Payload payload
-};
-
-// Payload structure
-struct Payload
-{
-    int8_t lattitude;
-    int16_t longtitude;
-    uint8_t eta;
-    char dest[3];
-};
-
 
 // Driver code 
 int main() { 
@@ -30,11 +8,6 @@ int main() {
     char buffer[MAXLINE]; 
     char *hello = "Hello from server"; 
     struct sockaddr_in servaddr, cliaddr; 
-
-    // Create datagram
-    struct Payload *payload1;
-    struct Data *data;
-    // User input
         
     // Creating socket that returns a socket descriptor 
     if ( (sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 ) { 
@@ -65,14 +38,21 @@ int main() {
     // Keep listening for data...
     while(1)
     {
-        if(n = recvfrom(sockfd, (char *)buffer, MAXLINE, MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len)<0)
+        printf("Waiting for data...");
+        fflush(stdout);
+        if(n = recvfrom(sockfd, (char *)buffer, MAXLINE, 0, ( struct sockaddr *) &cliaddr, &len)<0)
         {
             perror("receive failed");
-            exit(EXIT_FAILURE)
+            exit(EXIT_FAILURE);
         } 
         buffer[n] = '\0'; 
         printf("Client : %s\n", buffer); 
-        sendto(sockfd, (const char *)hello, strlen(hello), MSG_CONFIRM, (const struct sockaddr *) &cliaddr, len); 
+        if (sendto(sockfd, (const char *)hello, strlen(hello), 0, (const struct sockaddr *) &cliaddr, len)<0)
+        {
+            perror("send failed");
+            exit(EXIT_FAILURE);
+        } 
+
         printf("Hello message sent.\n");  
     }
   
@@ -87,14 +67,14 @@ Descriptions: Return the checksum value of the given data
 
 returns:
  */
-#define BLOCK_SIZE 64
- unsigned short CheckSum(unsigned short *datagram, int nbytes){
-    register long sum;
-    unsigned short oddbytes;
+// #define BLOCK_SIZE 64
+//  unsigned short CheckSum(unsigned short *datagram, int nbytes){
+//     register long sum;
+//     unsigned short oddbytes;
 
-    sum = 0;
-
-
+//     sum = 0;
 
 
- }
+
+
+//  }
