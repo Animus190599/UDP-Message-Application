@@ -37,6 +37,3 @@ void struct2str(Data *dg, char * buffer){
 void structTest(void){
     printf("All working fine");
 }
-// struct Data str2struct(){
-
-// }
