@@ -1,6 +1,9 @@
 
 1. Assumption
 
+
+Original plan was to create a custom header using raw socket, then send the message through a serialized struct.
+
 All the message is within the data segment of an UDP message, not the header, for simplification purpose.
 This is because the network stack will automatically include UDP headers. 
 

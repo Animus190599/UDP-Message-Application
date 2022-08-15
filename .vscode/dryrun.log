@@ -1,0 +1,10 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/anonymous/BurranaTest'
+c99     -c -o client.o client.c
+c99     -c -o helper.o helper.c
+gcc -g -o client -std=c99 client.o helper.o
+c99     -c -o server.o server.c
+gcc -g -o server -std=c99 server.o helper.o
+echo "Compile Done."
+make: Leaving directory '/home/anonymous/BurranaTest'
+ 
