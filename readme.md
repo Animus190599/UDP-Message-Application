@@ -6,6 +6,13 @@ Author:  Thomas Nguyen
 - [x] Receives flight information via UDP .
 - [x] Unpacks flight information from the UDP datagram.
 - [x] Saves the flight information to disk.
+
+- [x] This firmware application shall be written in C std=99 (specified in *Makefile*)
+- [x] This firmware application shall receive UDP messages from a non-specific source
+- [x] This firmware application shall verify received UDP messages have a valid checksum (custom checksum)
+- [x] This service shall only process supported payload versions.
+- [x] This firmware application shall unpack the payload as per the specification, and validate all data meets the above constraints.
+- [x] This firmware application shall save this flight information to disk.
 ### 2. Assumption
 - Assume there is only 1 correct payload version (version 1)
 - Destination code is a simple 3 character string, for simplification purpose
@@ -22,7 +29,7 @@ The checksum function, if implemented correctly, would be very complicated, and 
 
 
 ### 4. Application block diagram
-![alt text](images/diagram.png)\
+![alt text](images/diagram.png)
 ### 5. File structure
 All files are presented as it is, there is only 1 image folder for the markdown file.
 ### 6. Instructions
@@ -30,10 +37,10 @@ All files are presented as it is, there is only 1 image folder for the markdown 
 - Run `make` to compile
 - Open 2 different terminals
 - Run `./server` on 1 and `./client` on the other
-- In **client** terminal, input values as instructed, you can either choose the default message (Y) or input it yourself (N)
+- In **client** terminal, input values as instructed, you can either choose the default message **(Y)** or input it yourself **(N)**. You can try input different values to see different responses from the server
 - After entering information, related information and confirmation will be printed on both the **server** and **client** terminals.
 - The **client** will exit after successful package transmission. Simply start another instance of it, or press `Ctrl+C` on **server** terminal to close the program.
 
->Reset wsl2 or linux instance if there are undefined errors (which shouldn't happen)
+>Reset Wsl2 or linux instance if there are undefined errors (which shouldn't happen)
 
 *Thanks for reading* :joy:
