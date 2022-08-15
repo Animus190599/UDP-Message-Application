@@ -66,7 +66,8 @@ void str2struct(Data *dg, char* str){
  * @return 8 byte checksum data
  * 
  * Calculate checksum of the struct using the address of each field within it.
- * Basically the sum of all addressed of each byte of each data field
+ * 1. Cast the pointer to the type of the field in the struct
+ * 2. Sum the byte within it
  **/
 unsigned short csum_calc(Data *dg){
 

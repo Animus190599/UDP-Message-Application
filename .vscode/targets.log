@@ -1,13 +1,14 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'client.o', needed by 'client'.  Stop.
+
 # GNU Make 4.2.1
- 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 15 19:34:39 2022
+# Make data base, printed on Mon Aug 15 19:47:57 2022
 
 # Variables
 
@@ -83,7 +84,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 NVM_CD_FLAGS = -q
 # environment
 ZSH = /home/anonymous/.oh-my-zsh
-# makefile (from 'Makefile', line 31)
+# makefile (from 'Makefile', line 2)
 CFLAG = -Wall -lpthread 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -97,7 +98,7 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 0
-# makefile (from 'Makefile', line 30)
+# makefile (from 'Makefile', line 1)
 CC = c99 
 # default
 MAKE_VERSION := 4.2.1
@@ -162,7 +163,7 @@ TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
 # variable set hash-table stats:
-# Load=75/1024=7%, Rehash=0, Collisions=4/103=4%
+# Load=75/1024=7%, Rehash=0, Collisions=4/100=4%
 
 # Pattern-specific Variable Values
 
@@ -170,10 +171,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
- 
-# . (device 2080, inode 180629): 17 files, no impossibilities.
+# . (device 2080, inode 180629): 12 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -185,44 +185,22 @@ all: client server
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := client server
-# automatic
-# | := 
-# automatic
-# < := client
-# automatic
-# ^ := client server
-# automatic
-# ? := client server
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 34):
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 5):
 	echo "Compile Done."
 
 # Not a target:
 client.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 19:08:39.135830906
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 client: client.o helper.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-15 19:08:39.285830905
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 42):
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 13):
 	gcc -g -o client -std=c99 client.o helper.o
 
 .PHONY: all clean
@@ -231,39 +209,30 @@ client: client.o helper.o
 #  File has not been updated.
 
 # Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-14 23:07:38.326988899
+#  Last modified 2022-08-15 19:37:55.265829849
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 server.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-15 19:10:31.275830838
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 server: server.o helper.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-15 19:10:31.445830838
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 10):
 	gcc -g -o server -std=c99 server.o helper.o
 
 # Not a target:
 helper.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-15 19:08:39.165830906
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -276,14 +245,14 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
+#  recipe to execute (from 'Makefile', line 17):
 	rm -f server 
 	rm -f client 
 	rm -f *.o 
 	
 
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/33=0%
+# Load=11/1024=1%, Rehash=0, Collisions=0/32=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -293,9 +262,9 @@ clean:
 # strcache buffers: 1 (0) / strings = 24 / storage = 200 B / avg = 8 B
 # current buf: size = 8162 B / used = 200 B / count = 24 / avg = 8 B
 
-# strcache performance: lookups = 45 / hit rate = 46%
+# strcache performance: lookups = 39 / hit rate = 38%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=1/45=2%
-# Finished Make data base on Mon Aug 15 19:34:39 2022
+# Load=24/8192=0%, Rehash=0, Collisions=1/39=3%
+# Finished Make data base on Mon Aug 15 19:47:57 2022
 
  

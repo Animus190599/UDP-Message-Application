@@ -1,32 +1,3 @@
-# CC = gcc
-# CFLAGS = -I. -Wall -std=gnu99
-# _OBJ = helper.o 
-# DEPS = helper.h
-
-# .PHONY: all
-# .DEFAULT_GOAL := all
-
-# OBJ_DIR = obj
-
-# OBJ = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
-
-# $(OBJ_DIR)/%.o: %.c $(DEPS)
-# 	if ! [ -d obj ]; then mkdir -p obj; fi
-# 	$(CC) -c $< -o $@ $(CFLAGS)
-
-# server: $(OBJ)
-# 	$(CC) server.c $^ -o $@ $(CFLAGS) 
-
-# client: $(OBJ)
-# 	$(CC) client.c $^ -o $@ $(CFLAGS) 
-
-# all: server client
-
-# clean:
-# 	rm -rf obj
-# 	rm server
-# 	rm client
-
 CC = c99 
 CFLAG = -Wall -lpthread 
 
